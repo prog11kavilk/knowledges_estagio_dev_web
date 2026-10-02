@@ -1,0 +1,33 @@
+/*reset CSS*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*cor de fundo*/
+body{
+    height: 100vh;   /*altura da tela do navegador */
+    box-sizing: border-box;
+    background-color: #2f4f4f;   
+    color: #eff3f2;
+}   
+
+/*cores para os textos*/
+
+.titulo-cor{
+    color:rgb(10, 248, 117);
+}
+
+.destaque-titulo{
+    color: orange;
+}
+
+.texto-destaque{
+    color:rgb(255, 255, 255);
+}
+.cor-instagram{
+    color: rgb(216, 37, 67)
+}
+.cor-github{
+    color:blue
+}

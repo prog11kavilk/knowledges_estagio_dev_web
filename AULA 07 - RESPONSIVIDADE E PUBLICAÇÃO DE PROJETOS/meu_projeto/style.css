@@ -1,0 +1,59 @@
+/*importamos a fonte que queremos em alguma classe*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+/*reset CSS*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*cor de fundo*/
+.body{
+    height: 100vh;   /*altura da tela do navegador */
+    box-sizing: border-box;  /* não permite que o conteúdo saia da tela*/
+    background-color: #12041f;   /* cor do plano de fundo*/
+    color: #eff3f2;   /* cor do texto*/
+}   
+
+.destaque.titulo{
+    color: #22d4fd;
+}
+
+.apresentacao{
+    margin: 10% 15%;
+    display: flex;   /*propriedade para aplicar o flexbox na classe*/
+    align-items:center;   /*adiciona um alinhamento ao centro*/
+    justify-content: space-between;
+}
+/*nosso bloco geral de elementos*/
+.apresentacao__conteudo{        
+    width: 615px;
+    display:flex;     /*insere a propriedade flex para relacionar a posição entre tudo*/
+    flex-direction: column;
+    gap: 40px;               /*dá o espaçamento de texto a texto*/
+
+}
+.apresentacao__titulo{
+    font-size: 36px;
+    font-family: 'Krona One', sans-serif;
+}
+.apresentacao__texto{
+    font-size: 24px;   
+    font-family:'Montserrat', sans-serif;
+}
+.apresentacao__links{
+    display: flex;
+    justify-content: space-between;
+}
+.links__separados{
+    background-color: #22d4fd;       /*cor de fundo dos botões*/
+    width: 280px;                       /*largura deles*/
+    text-align: center;                 /*alinhar o texto do bloco ao centro*/
+    border-radius: 16px;                /*arredonda a borda dos botoes dos links*/
+    font-size:24px;
+    font-weight: 600;
+    padding: 21,5px, 0;
+    text-decoration: None;              /* decora o texto com o comando dado*/
+    color:#12041f;
+    font-family:'Montserrat', sans-serif;
+
+}

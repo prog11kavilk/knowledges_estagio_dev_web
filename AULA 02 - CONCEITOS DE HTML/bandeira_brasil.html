@@ -1,0 +1,32 @@
+<!--bandeira do brasil-->
+
+<canvas width="1200" height="800"></canvas>
+
+<script>
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+
+pincel.fillStyle = 'green';
+pincel.fillRect(0, 0, 1200, 800);
+
+pincel.fillStyle = 'yellow';
+pincel.beginPath();
+pincel.moveTo(600, 100);
+pincel.lineTo(100, 400);
+pincel.lineTo(1100, 400);
+pincel.fill();
+
+pincel.beginPath();
+pincel.moveTo(600, 700);
+pincel.lineTo(100, 400);
+pincel.lineTo(1100, 400);
+pincel.fill();
+
+pincel.fillStyle = 'darkblue';
+pincel.beginPath();
+
+pincel.arc(600, 400, 150, 0, 2*3.14);
+pincel.fill();
+
+</script>

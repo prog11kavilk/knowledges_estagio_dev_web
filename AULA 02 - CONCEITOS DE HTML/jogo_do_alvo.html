@@ -1,0 +1,59 @@
+<!--novamente definimos as variaveis padrao-->
+
+<canvas width = "600" height = "400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    
+    pincel.fillStyle = 'black';
+    pincel.fillRect(0,0,600,400);
+    
+    var raio = 5
+    var xRandom;
+    var yRandom;
+
+    function desenhaCirc(x, y, raio, cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+        pincel.clearRect(0,0,600,400);
+    }
+
+    function desenhaAlvo(x, y) {
+        desenhaCirc(x, y, raio + 20, 'red');
+        desenhaCirc(x, y, raio + 10, 'white');
+        desenhaCirc(x, y, raio, 'red');
+    }
+
+    function sorteiaPosicao(maximo) {
+        return Math.floor(Math.random() * maximo);
+
+    }
+    
+    function atualizaTela() {
+        limpaTela();
+        xRandom = sorteiaPosicao(600);
+        yRandom = sorteiaPosicao(400);
+        desenhaAlvo(xRandom,yRandom);
+    }
+
+    setInterval(atualizaTela,1000);
+
+    function dispara(evento) {
+        
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop; 
+
+        if((x > xRandom - raio) && (x < xRandom + raio) &&(y > yRandom - raio) && (y < yRandom + raio)) {
+                alert('Parabéns, acertou!')
+        }
+    }
+
+    tela.onclick = dispara;
+
+</script>

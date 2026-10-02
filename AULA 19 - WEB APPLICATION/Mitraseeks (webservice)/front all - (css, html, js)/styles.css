@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: #000000;
+}
+
+/* min-height em vez de height: o fundo acompanha a página inteira, não só a primeira tela */
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: rgb(250, 250, 250);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.dropdown-select {
+    width: 40%;
+    margin: 0;
+    padding: 6px 8px 6px 10px;
+    height: 40px; 
+    line-height: 20px; 
+    font-size: 16px;
+    color: #62717a;
+    text-shadow: 0 1px white;
+    background: #f2f2f2;
+  }
+
+/* ---------- Formulários compartilhados (login e janelas da conta) ---------- */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    font-size: 14px;
+    color: #e6def5;
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.75em 0.9em;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    font: 16px 'Inter', sans-serif;
+}
+
+.campo input:focus {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 1px;
+}
+
+.campo small {
+    color: #a99bc4;
+    font-size: 12px;
+}
+
+.campo__senha {
+    position: relative;
+    display: block;
+}
+
+.campo__senha input {
+    padding-right: 2.8em;
+}
+
+.campo__olho {
+    position: absolute;
+    right: 0.4em;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: #cfc4e6;
+    cursor: pointer;
+    display: flex;
+}
+
+.campo__codigo {
+    letter-spacing: 0.6em;
+    text-align: center;
+    font-size: 22px !important;
+}
+
+.botao {
+    border: 0;
+    border-radius: 10px;
+    padding: 0.85em;
+    background: #6a2cbb;
+    color: #ffffff;
+    font: 700 16px 'Inter', sans-serif;
+    cursor: pointer;
+    margin-top: 0.25em;
+}
+
+.botao:hover {
+    background: #2f1b3f;
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.link {
+    border: 0;
+    background: transparent;
+    color: #c4a8ff;
+    font: 500 14px 'Inter', sans-serif;
+    cursor: pointer;
+    align-self: center;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.aviso {
+    border-radius: 10px;
+    padding: 0.75em 0.9em;
+    margin-bottom: 1em;
+    font-size: 14px;
+    line-height: 1.4;
+    background: rgba(255, 90, 90, 0.14);
+    border: 1px solid rgba(255, 110, 110, 0.4);
+    color: #ffd0d0;
+}
+
+.aviso--ok {
+    background: rgba(80, 200, 120, 0.14);
+    border-color: rgba(100, 220, 140, 0.4);
+    color: #cdf5da;
+}

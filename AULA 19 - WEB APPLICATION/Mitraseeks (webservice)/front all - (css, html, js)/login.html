@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>MitraSeeks -> ENTRAR </title>
+</head>
+
+<body>
+    <main class="acesso">
+        <div class="acesso__marca">
+            <img class="logotipo" src="./img/logotipo.svg" alt="" aria-hidden="true">
+            <img src="./img/image.png" alt="MitraSeeks">
+        </div>
+
+        <section class="cartao" aria-live="polite">
+            <!-- Abas: entrar / criar conta -->
+            <div class="abas" role="tablist" data-abas>
+                <button type="button" role="tab" class="abas__aba" data-ir="entrar" aria-selected="true">Entrar</button>
+                <button type="button" role="tab" class="abas__aba" data-ir="cadastro" aria-selected="false">Criar conta</button>
+            </div>
+
+            <p class="aviso" data-aviso hidden></p>
+
+            <!-- Entrar -->
+            <form class="etapa" data-etapa="entrar" novalidate>
+                <h1 class="etapa__titulo">Bem-vindo de volta!</h1>
+                <label class="campo">
+                    <span>Usuário ou email</span>
+                    <input name="login" autocomplete="username" required>
+                </label>
+                <label class="campo">
+                    <span>Senha</span>
+                    <span class="campo__senha">
+                        <input name="senha" type="password" autocomplete="current-password" required>
+                        <button type="button" class="campo__olho" data-mostrar-senha aria-label="Mostrar senha">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </span>
+                </label>
+                <button class="botao" type="submit">Entrar</button>
+                <button class="link" type="button" data-ir="esqueci">Esqueci minha senha</button>
+            </form>
+
+            <!-- Criar conta -->
+            <form class="etapa" data-etapa="cadastro" novalidate hidden>
+                <h1 class="etapa__titulo">Crie sua conta</h1>
+                <label class="campo">
+                    <span>Nome de usuário</span>
+                    <input name="nomeUsuario" autocomplete="username" minlength="3" maxlength="20"
+                        pattern="[A-Za-z0-9_.]{3,20}" required>
+                    <small>3 a 20 caracteres: letras, números, ponto ou _</small>
+                </label>
+                <label class="campo">
+                    <span>Email</span>
+                    <input name="email" type="email" autocomplete="email" required>
+                    <small>Vamos mandar um código para confirmar</small>
+                </label>
+                <label class="campo">
+                    <span>Senha</span>
+                    <span class="campo__senha">
+                        <input name="senha" type="password" autocomplete="new-password" minlength="8" required>
+                        <button type="button" class="campo__olho" data-mostrar-senha aria-label="Mostrar senha">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </span>
+                    <small>Mínimo de 8 caracteres, com letra e número</small>
+                </label>
+                <label class="campo">
+                    <span>Confirmar senha</span>
+                    <input name="confirmacao" type="password" autocomplete="new-password" required>
+                </label>
+                <button class="botao" type="submit">Criar conta</button>
+            </form>
+
+            <!-- Confirmar email com o código -->
+            <form class="etapa" data-etapa="codigo" novalidate hidden>
+                <h1 class="etapa__titulo">Confirme seu email</h1>
+                <p class="etapa__texto">Digite o código de 6 dígitos que enviamos para <b data-email-destino></b>.</p>
+                <label class="campo">
+                    <span>Código</span>
+                    <input name="codigo" class="campo__codigo" inputmode="numeric" autocomplete="one-time-code"
+                        maxlength="6" pattern="\d{6}" required>
+                </label>
+                <button class="botao" type="submit">Confirmar e entrar</button>
+                <button class="link" type="button" data-reenviar>Reenviar código</button>
+                <button class="link" type="button" data-ir="cadastro">Usar outro email</button>
+            </form>
+
+            <!-- Esqueci a senha: pedir código -->
+            <form class="etapa" data-etapa="esqueci" novalidate hidden>
+                <h1 class="etapa__titulo">Redefinir senha</h1>
+                <p class="etapa__texto">Informe o email da conta. Vamos mandar um código para criar uma senha nova.</p>
+                <label class="campo">
+                    <span>Email</span>
+                    <input name="email" type="email" autocomplete="email" required>
+                </label>
+                <button class="botao" type="submit">Enviar código</button>
+                <button class="link" type="button" data-ir="entrar">Voltar para entrar</button>
+            </form>
+
+            <!-- Esqueci a senha: código + nova senha -->
+            <form class="etapa" data-etapa="nova-senha" novalidate hidden>
+                <h1 class="etapa__titulo">Crie uma senha nova</h1>
+                <p class="etapa__texto">Digite o código enviado para <b data-email-destino></b> e a nova senha.</p>
+                <label class="campo">
+                    <span>Código</span>
+                    <input name="codigo" class="campo__codigo" inputmode="numeric" autocomplete="one-time-code"
+                        maxlength="6" pattern="\d{6}" required>
+                </label>
+                <label class="campo">
+                    <span>Nova senha</span>
+                    <input name="novaSenha" type="password" autocomplete="new-password" minlength="8" required>
+                    <small>Mínimo de 8 caracteres, com letra e número</small>
+                </label>
+                <label class="campo">
+                    <span>Confirmar nova senha</span>
+                    <input name="confirmacao" type="password" autocomplete="new-password" required>
+                </label>
+                <button class="botao" type="submit">Salvar e entrar</button>
+                <button class="link" type="button" data-ir="entrar">Voltar para entrar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="./scripts/login.js" type="module"></script>
+</body>
+
+</html>

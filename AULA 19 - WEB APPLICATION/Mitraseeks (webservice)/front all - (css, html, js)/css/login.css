@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(180.61deg,
+            #000000 25.16%,
+            #340052 80%,
+            #b56cc9 100%) fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 1em;
+}
+
+.acesso {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction:column;
+    gap: 1.5em;
+}
+
+.acesso__marca {
+    border:
+    width 100%;
+    align-self: center;
+    border-radius: 16px;
+    padding: 0.6em 1.4em;
+}
+
+.acesso__marca img {
+    filter: drop-shadow(0 0 1.5em #8b5cf6) invert (1) sepia(1) saturate(5) hue-rotate(270deg);
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
+/* Logotipo (tela de cinema) ao lado do nome */
+.acesso__marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.acesso__marca .logotipo {
+    width: 56px;
+    filter: drop-shadow(0 0 0.8em rgba(96, 165, 250, 0.5));
+}
+
+.cartao {
+    background: rgba(12, 4, 22, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 40px;
+    padding: 1.75em;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.abas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 1.25em;
+}
+
+.abas__aba {
+    border: 0;
+    border-radius: 9px;
+    padding: 0.6em;
+    background: transparent;
+    color: #cfc4e6;
+    font: 500 15px 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+.abas__aba[aria-selected="true"] {
+    background: #5d0bc9;
+    color: #ffffff;
+}
+
+.etapa {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.etapa__titulo {
+    font-size: 22px;
+}
+
+.etapa__texto {
+    color: #cfc4e6;
+    font-size: 2.5 rm;
+    line-height: 1.5;
+}

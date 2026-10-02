@@ -1,0 +1,83 @@
+# Séries importadas pelo POST /catalogo/importar (um título por linha, como aparece no OMDb).
+# Cada série gasta 1 consulta + 1 por temporada da cota diária do OMDb.
+Chernobyl
+True Detective
+Fargo
+Westworld
+Succession
+The Sopranos
+The Wire
+Mad Men
+Narcos
+Mindhunter
+Band of Brothers
+The Crown
+Squid Game
+Loki
+WandaVision
+Andor
+The Queen's Gambit
+Euphoria
+Only Murders in the Building
+Ozark
+Prison Break
+Vikings
+The Umbrella Academy
+Invincible
+Avatar: The Last Airbender
+Attack on Titan
+Death Note
+Fullmetal Alchemist: Brotherhood
+BoJack Horseman
+Gravity Falls
+Twin Peaks
+The Handmaid's Tale
+Fleabag
+Mr. Robot
+Parks and Recreation
+Daredevil
+Reacher
+Slow Horses
+Silo
+Fallout
+3 Body Problem
+The Penguin
+Sons of Anarchy
+Dexter
+Seinfeld
+How I Met Your Mother
+
+# ===== Ampliação do catálogo (títulos do IMDb via OMDb) =====
+# --- Drama ---
+The Leftovers
+Shōgun
+The Americans
+Normal People
+The Night Of
+Station Eleven
+Beef
+Baby Reindeer
+Adolescence
+The White Lotus
+Yellowjackets
+# --- Comédia ---
+Atlanta
+Barry
+Hacks
+Abbott Elementary
+What We Do in the Shadows
+Arrested Development
+# --- Brasil e Europa ---
+Invisible City
+Sintonia
+3%
+Lupin
+Call My Agent!
+Borgen
+# --- Anime e animação ---
+Cowboy Bebop
+Neon Genesis Evangelion
+Frieren: Beyond Journey's End
+Blue Eye Samurai
+# --- Documentário ---
+Planet Earth II

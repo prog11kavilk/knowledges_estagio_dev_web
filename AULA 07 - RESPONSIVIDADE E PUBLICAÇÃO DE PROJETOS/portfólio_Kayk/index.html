@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">    <!--codifica os caracteres do código-->
+    <!--faz a escala dos elementos conforme o dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio: Kayk</title>
+    <!--tag com propriedade "rel" para lincar com outra estrutura-->
+    <link rel="icon" href="./imagens_projeto/icone.jpg">
+    <!--integra o css ao html-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--box "pai" da página, formada por diversos "filhos"-->
+<body>
+    <!--cabecalho da pagina-->
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__links" href="sobre.html">Sobre mim</a>
+            <a class="cabecalho__links" href="curriculo.html">Meu currículo</a>
+        </nav>
+    </header>
+
+    <!--corpo da pagina-->
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">     <!--sessão do elemento pai-->
+            <h1 class="apresentacao__titulo">Vamos aprender programação <strong class="destaque-titulo">de um jeito leve?</strong></h1>
+            <p class="apresentacao__texto">Olá! Sou Kayk Alexandre, estagiário em desenvolvimento de sistemas com experiência em <strong>serviços administrativos, linguagens HTML e CSS</strong>. Estou cursando G.I na Universidade Federal de Uberlândia, servindo à instituição Governos Tecnológicos e Integrados Ltda.
+            Vamos conversar?</p>
+            <div class="apresentacao__links">   <!--só junta itens da mesma natureza, sem significado para os navegadores-->
+                <h2 class="links__subtitulo">Visite minhas redes:</h2>
+                <a class="apresentacao__links__link" href="https://instagram.com/kayk_vilela09" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/instagram.png" alt="Ícone do Instagram">
+                    Instagram
+                </a>
+                <a class="apresentacao__links__link" href="https://github.com/prog11kavilk" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/github.png" alt="Ícone do GitHub">
+                    GitHub
+                </a>
+            </div>
+        </section>
+        <img class="apresentacao__imagem" src="./assets/img_capa.png" alt="Imagem de programador">
+    </main>
+
+    <!--rodapé da pagina-->
+    <footer class="rodape">
+        <h2>Seja bom em tudo que fizeres</h2>
+    </footer>
+</body>
+</html>

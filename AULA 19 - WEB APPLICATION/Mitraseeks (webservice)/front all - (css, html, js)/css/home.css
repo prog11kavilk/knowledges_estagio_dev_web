@@ -1,0 +1,420 @@
+/* "fixed": o gradiente cobre a página inteira, mesmo rolando */
+body {
+    background: repeating-linear-gradient(to bottom right,
+            #000000 25.16%,
+            #6a2cbb 80%,
+            #40017a 100%);
+
+    /* Velocidade das esteiras (Configurações > Exibição): segundos que cada título leva para passar */
+    --segundos-por-item: 4.5s;
+    /* Largura de cada cartaz nas esteiras (as setas se alinham ao meio do pôster por ela) */
+    --largura-cartaz: 200px;
+}
+
+body[data-velocidade="lenta"] {
+    --segundos-por-item: 7s;
+}
+
+body[data-velocidade="rapida"] {
+    --segundos-por-item: 2.5s;
+}
+
+h1 {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+select,
+option {
+    background-color: #40017a;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 1em;
+}
+
+select {
+    outline: none;
+    border-radius: 8px;
+}
+
+h2 {
+    color: rgba(220, 220, 220, 220);
+    font-size: 26px;
+    margin-bottom: 0.4em;
+}
+
+main {
+    padding: 0 3em 3em;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    padding: 1em 3em;
+    position: relative;
+    z-index: 10;
+}
+
+.cabecalho__logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.cabecalho__logo img {
+    width: 12em;
+    height: auto;
+}
+
+/* Logotipo (tela de cinema) colado ao nome */
+.cabecalho__logo .logotipo {
+    width: 3.2em;
+    margin-right: -1em;
+    filter: drop-shadow(0 0 0.6em rgba(96, 165, 250, 0.45));
+}
+
+.cabecalho__opcoes {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.material-symbols-outlined {
+    color: white;
+    font-size: 2.4rem;
+}
+
+.icone-botao {
+    display: flex;
+    border: 0;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 0.15em;
+    background: transparent;
+    cursor: pointer;
+}
+
+.icone-botao:focus-visible,
+.conta__botao:focus-visible {
+    outline: 2px solid #c4a8ff;
+    outline-offset: 2px;
+}
+
+/* ---------- Busca ---------- */
+
+.busca {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.busca__campo {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font: 16px 'Inter', sans-serif;
+    outline: none;
+    transition: width 0.25s, opacity 0.2s, padding 0.25s;
+}
+
+.busca__campo::placeholder {
+    color: #b9aed0;
+}
+
+.busca--aberta,
+.busca:focus-within {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.busca--aberta .busca__campo,
+.busca:focus-within .busca__campo {
+    width: min(320px, 45vw);
+    opacity: 1;
+    padding: 0.5em 1em 0.5em 0.25em;
+}
+
+/* ---------- Seções com esteira ---------- */
+
+.section {
+    margin-bottom: 2em;
+}
+
+/* Área da esteira: guarda a esteira e as duas setas por cima dela */
+.esteira-area {
+    position: relative;
+}
+
+/* Setas: círculo transparente no meio da altura do pôster; cada clique anda 4 cartazes */
+.esteira__seta {
+    position: absolute;
+    z-index: 2;
+    top: calc(0.6em + var(--largura-cartaz) * 0.75);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25em;
+    height: 3.25em;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    background: rgba(15, 1, 32, 0.08);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.esteira__seta--voltar {
+    left: 0.75em;
+}
+
+.esteira__seta--avancar {
+    right: 0.75em;
+}
+
+.esteira__seta:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+.esteira__seta:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.esteira__seta:focus-visible {
+    outline: 2px solid #c4a8ff;
+    outline-offset: 2px;
+}
+
+.esteira__seta .material-symbols-outlined {
+    font-size: 2rem;
+}
+
+.esteira {
+    overflow: hidden;
+    padding: 0.6em 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
+
+/* O trilho tem a lista duas vezes; andar -50% leva a segunda cópia exatamente ao lugar da primeira */
+.esteira__trilho {
+    list-style: none;
+    display: flex;
+    width: max-content;
+    animation: esteira calc(var(--itens, 10) * var(--segundos-por-item)) linear infinite;
+}
+
+@keyframes esteira {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.esteira:focus-within .esteira__trilho,
+.pausar-no-hover .esteira-area:hover .esteira__trilho {
+    animation-play-state: paused;
+}
+
+.esteira__vazia {
+    color: #bbbbbb;
+    padding: 1em 0;
+}
+
+/* Reduzir animações (preferência ou sistema): esteira parada, com rolagem manual e sem a cópia */
+.sem-animacao .esteira {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.sem-animacao .esteira__trilho {
+    animation: none;
+}
+
+.sem-animacao .cartaz[aria-hidden="true"] {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .esteira {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .esteira__trilho {
+        animation: none;
+    }
+
+    .cartaz[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+/* ---------- Cartazes ---------- */
+
+.cartaz {
+    flex-shrink: 0;
+    width: var(--largura-cartaz);
+    margin-right: 1.25em;
+}
+
+.cartaz a {
+    position: relative;
+    display: block;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.06);
+    transition: transform 0.2s;
+}
+
+.cartaz a:hover,
+.cartaz a:focus-visible {
+    transform: scale(1.04);
+    outline: 2px solid #c4a8ff;
+}
+
+.cartaz img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cartaz__nota {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    padding: 0.2em 0.5em;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffd54a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ocultar-notas .cartaz__nota {
+    display: none;
+}
+
+.cartaz__titulo {
+    margin-top: 0.5em;
+    font-size: 14px;
+    color: #dddddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cartaz__sem-poster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1em;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(160deg, #2a0d4d, #12051f);
+    color: #ffffff;
+}
+
+/* ---------- Busca / categoria: grade ---------- */
+
+.lista {
+    list-style-type: none;
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25em;
+}
+
+.lista .cartaz {
+    width: auto;
+    margin: 0;
+}
+
+.pesquisa {
+    min-height: 30vh;
+}
+
+.pesquisa__vazio {
+    color: #cccccc;
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 700px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        padding: 1em;
+    }
+
+    .cabecalho__logo {
+        gap: 0.75em;
+    }
+
+    .cabecalho__logo img {
+        width: 8em;
+    }
+
+    .cabecalho__logo .logotipo {
+        width: 2.4em;
+        margin-right: -0.5em;
+    }
+
+    /* Ícones à direita: o menu da conta abre para a esquerda sem sair da tela */
+    .cabecalho__opcoes {
+        margin-left: auto;
+    }
+
+    select,
+    option {
+        font-size: 16px;
+    }
+
+    .conta__nome {
+        display: none;
+    }
+
+    main {
+        padding: 0 1em 2em;
+    }
+
+    body {
+        --largura-cartaz: 140px;
+    }
+
+    .cartaz {
+        margin-right: 0.9em;
+    }
+
+    .esteira__seta {
+        width: 2.6em;
+        height: 2.6em;
+    }
+
+    .esteira__seta .material-symbols-outlined {
+        font-size: 1.6rem;
+    }
+}

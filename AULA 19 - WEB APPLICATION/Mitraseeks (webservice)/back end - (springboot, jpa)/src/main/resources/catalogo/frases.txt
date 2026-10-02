@@ -1,0 +1,55 @@
+# Frases clássicas carregadas ao subir o back (FraseInicializador), uma por linha:
+# Tipo | título (igual ao do catálogo, em inglês como no OMDb) | personagem | frase
+# Tipo: filme ou serie. O cartaz e as cores vêm do título no catálogo; título que ainda
+# Não foi importado fica sem cartaz até a próxima subida. Linhas com # são ignoradas.
+
+filme | The Godfather | Don Vito Corleone | Vou fazer uma oferta que ele não pode recusar.
+filme | The Dark Knight | Coringa | Por que tão sério?
+filme | Star Wars: Episode V - The Empire Strikes Back | Darth Vader | Não. Eu sou seu pai.
+filme | Star Wars: Episode IV - A New Hope | Obi-Wan Kenobi | Estes não são os droides que vocês estão procurando.
+filme | The Terminator | O Exterminador | Eu voltarei.
+filme | Terminator 2: Judgment Day | O Exterminador | Hasta la vista, baby.
+filme | Forrest Gump | Forrest Gump | Minha mãe sempre dizia: a vida é como uma caixa de chocolates. Você nunca sabe o que vai encontrar.
+filme | Casablanca | Rick Blaine | Nós sempre teremos Paris.
+filme | Jaws | Chefe Martin Brody | Vocês vão precisar de um barco maior.
+filme | Toy Story | Buzz Lightyear | Ao infinito e além!
+filme | The Lord of the Rings: The Fellowship of the Ring | Gandalf | Você não vai passar!
+filme | The Silence of the Lambs | Hannibal Lecter | Um recenseador tentou me entrevistar uma vez. Eu comi o fígado dele com favas e um bom Chianti.
+filme | Titanic | Jack Dawson | Eu sou o rei do mundo!
+filme | Gladiator | Maximus | O que fazemos em vida ecoa na eternidade.
+filme | Taxi Driver | Travis Bickle | Você está falando comigo?
+filme | Back to the Future | Doc Brown | Estradas? Para onde vamos, não precisamos de estradas.
+filme | Apocalypse Now | Tenente-coronel Kilgore | Eu adoro o cheiro de napalm pela manhã.
+filme | Fight Club | Tyler Durden | A primeira regra do Clube da Luta é: você não fala sobre o Clube da Luta.
+filme | The Matrix | Morpheus | Você toma a pílula azul e a história acaba. Você toma a pílula vermelha, fica no País das Maravilhas, e eu te mostro até onde vai a toca do coelho.
+filme | Scarface | Tony Montana | Diga olá ao meu amiguinho!
+filme | The Shining | Jack Torrance | Aqui está o Johnny!
+filme | Harry Potter and the Sorcerer's Stone | Rúbeo Hagrid | Você é um bruxo, Harry.
+filme | The Lion King | Mufasa | Lembre-se de quem você é.
+filme | Finding Nemo | Dory | Continue a nadar!
+filme | Jurassic Park | Ian Malcolm | A vida encontra um meio.
+filme | E.T. the Extra-Terrestrial | E.T. | E.T. telefone, casa.
+filme | Avengers: Endgame | Tony Stark | Eu sou o Homem de Ferro.
+filme | Spider-Man | Ben Parker | Com grandes poderes vêm grandes responsabilidades.
+filme | Joker | Arthur Fleck | Eu achava que a minha vida era uma tragédia. Mas agora eu percebo: é uma comédia.
+filme | Interstellar | Cooper | A humanidade nasceu na Terra. Nunca foi feita para morrer aqui.
+filme | Elite Squad | Capitão Nascimento | Pede pra sair!
+filme | The Incredibles | Edna Moda | Sem capa!
+filme | Ratatouille | Chef Gusteau | Qualquer um pode cozinhar.
+
+serie | Breaking Bad | Walter White | Eu não estou em perigo, eu sou o perigo!
+serie | Game of Thrones | Ned Stark | O inverno está chegando.
+serie | Friends | Joey Tribbiani | E aí, como você está?
+serie | The Office | Michael Scott | Foi o que ela disse.
+serie | How I Met Your Mother | Barney Stinson | Vai ser lendá... espera só... rio!
+serie | Stranger Things | Eleven | Amigos não mentem.
+serie | The Mandalorian | Din Djarin | Este é o caminho.
+serie | Sherlock | Sherlock Holmes | Eu não sou um psicopata, sou um sociopata altamente funcional. Faça sua pesquisa.
+serie | Seinfeld | O Nazista da Sopa | Sem sopa pra você!
+serie | Rick and Morty | Rick Sanchez | Wubba lubba dub dub!
+serie | The Wire | Omar Little | Se você vier atrás do rei, é melhor não errar.
+serie | Twin Peaks | Agente Dale Cooper | Este é um café danado de bom!
+serie | Ted Lasso | Ted Lasso | Eu acredito em acreditar.
+serie | Lost | Desmond Hume | Te vejo em outra vida, irmão.
+serie | Chernobyl | Valery Legasov | Qual é o custo das mentiras?
+serie | Brooklyn Nine-Nine | Jake Peralta | Legal, legal, legal, legal, legal. Sem dúvida, sem dúvida, sem dúvida.

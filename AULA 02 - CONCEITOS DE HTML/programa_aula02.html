@@ -1,0 +1,44 @@
+<!--arquivo html - aula 02-->
+<!--fazendo a tag do quadro branco-->
+
+<canvas width="600" height="400"></canvas>
+
+<!--aqui crio as variaveis com funcoes relacionadas ao que queremos-->
+<!--querySelector: pega a tag especifica     getContext: chama a variavel sob algum contexto -->
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    <!--vou personalizar minha variavel pincel--> 
+   
+    // comentario em Js  //
+    //retangulos//
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0,0,600,400); 
+
+    pincel.fillStyle = 'orange';
+    pincel.fillRect(0,0,200,400);
+    
+    pincel.fillStyle = 'green';
+    pincel.fillRect(400,0,200,400);
+
+    //triangulo
+    //chama a funcao beginPath para comecar o caminho e MoveTo para deslocar 
+    pincel.fillStyle = 'purple'
+    pincel.beginPath();
+
+    pincel.moveTo(300,200);
+
+    //traca as linhas entre os pontos com as coordenadas citadas
+    pincel.lineTo(200,400);
+    pincel.lineTo(400,400);
+    //preenche o triangulo na cor atribuida em fillStyle
+    pincel.fill();
+
+    //representando a bola
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(300,200,70,0, (2*3.14));
+    pincel.fill();
+
+</script>

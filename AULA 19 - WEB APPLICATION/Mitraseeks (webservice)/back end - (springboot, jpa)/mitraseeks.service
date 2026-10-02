@@ -1,0 +1,22 @@
+# Back do MitraSeeks (Spring Boot), que também serve o front em http://localhost:8080
+# Sobe sozinho quando você entra no Linux e reinicia se cair. Instalado pelo instalar-servico.sh
+#   systemctl --user status mitraseeks     ver se está rodando
+#   systemctl --user stop mitraseeks       parar (ex.: para rodar pelo IntelliJ)
+#   systemctl --user restart mitraseeks    reiniciar
+#   journalctl --user -u mitraseeks -f     ver o console/log
+[Unit]
+Description=MitraSeeks (back + front) em http://localhost:8080
+After=network-online.target
+
+[Service]
+# Trocado pelo caminho real da pasta do back na instalação
+WorkingDirectory=__PASTA_DO_BACK__
+# spring-boot:run usa sempre o código mais recente; o devtools recarrega ao recompilar (Ctrl+F9 no IntelliJ)
+ExecStart=/bin/sh ./mvnw -q spring-boot:run
+SuccessExitStatus=143
+# Se o Postgres ainda não subiu ou a porta está ocupada, tenta de novo
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=default.target

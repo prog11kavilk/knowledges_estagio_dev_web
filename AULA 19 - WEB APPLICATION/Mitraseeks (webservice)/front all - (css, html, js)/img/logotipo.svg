@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 56" role="img" aria-label="Logotipo MitraSeeks">
+    <!-- Tela de cinema minimalista: o gradiente alterna entre o azul da marca e o branco -->
+    <style>
+        .azul-escuro { animation: alterna-escuro 6s ease-in-out infinite; }
+        .azul-medio { animation: alterna-medio 6s ease-in-out infinite; }
+        .branco { animation: alterna-branco 6s ease-in-out infinite; }
+
+        @keyframes alterna-escuro {
+            0%, 100% { stop-color: #1d4ed8; }
+            50% { stop-color: #ffffff; }
+        }
+
+        @keyframes alterna-medio {
+            0%, 100% { stop-color: #60a5fa; }
+            50% { stop-color: #93c5fd; }
+        }
+
+        @keyframes alterna-branco {
+            0%, 100% { stop-color: #ffffff; }
+            50% { stop-color: #1d4ed8; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            stop { animation: none; }
+        }
+    </style>
+
+    <defs>
+        <linearGradient id="tela" x1="0" y1="0" x2="1" y2="1">
+            <stop class="azul-escuro" offset="0" stop-color="#1d4ed8" />
+            <stop class="azul-medio" offset="0.55" stop-color="#60a5fa" />
+            <stop class="branco" offset="1" stop-color="#ffffff" />
+        </linearGradient>
+
+        <linearGradient id="suporte" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2563eb" />
+            <stop offset="1" stop-color="#dbeafe" />
+        </linearGradient>
+    </defs>
+
+    <!-- Tela -->
+    <rect x="2" y="2" width="60" height="38" rx="6" fill="url(#tela)" />
+    <rect x="2.75" y="2.75" width="58.5" height="36.5" rx="5.25" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5" />
+
+    <!-- Play no centro, no azul-marinho do "Mitra" -->
+    <path d="M27 13.5 L40.5 21 L27 28.5 Z" fill="#0d2c6e" stroke="#0d2c6e" stroke-width="2" stroke-linejoin="round" />
+
+    <!-- Pé e base -->
+    <rect x="29.5" y="40" width="5" height="8" fill="url(#suporte)" />
+    <rect x="18" y="48" width="28" height="5" rx="2.5" fill="url(#suporte)" />
+</svg>

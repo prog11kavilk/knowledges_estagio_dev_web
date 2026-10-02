@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sem sessão, vai para a criação de conta/login antes de mostrar o app -->
+    <script>try { if (!localStorage.getItem('mitraseeks.token')) location.replace('login.html'); } catch (e) { }</script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/conta.css">
+    <title>MitraSeeks</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__logo">
+            <img class="logotipo" src="./img/logotipo.svg" alt="" aria-hidden="true">
+            <img src="./img/image.png" alt="Logo MitraSeeks">
+            <h1>MitraSeeks</h1>
+            <select data-categorias aria-label="Filtrar por categoria">
+                <option value="todos">Categorias</option>
+                <option value="comédia">Comédia</option>
+                <option value="ação">Ação</option>
+                <option value="crime">Crime</option>
+                <option value="drama">Drama</option>
+                <option value="aventura">Aventura</option>
+                <option value="animação">Animação</option>
+                <option value="terror">Terror</option>
+            </select>
+        </div>
+
+        <div class="cabecalho__opcoes">
+            <!-- Busca: clique na lupa ou aperte "/" e digite o nome -->
+            <div class="busca" data-busca>
+                <button type="button" class="icone-botao" data-busca-abrir aria-label="Buscar (atalho: /)">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <input type="search" class="busca__campo" data-busca-campo placeholder="Buscar séries e filmes…"
+                    aria-label="Nome da série ou filme" autocomplete="off">
+            </div>
+
+            <a href="frases.html" class="icone-botao" title="Frases clássicas" aria-label="Frases clássicas">
+                <span class="material-symbols-outlined">format_quote</span>
+            </a>
+
+            <span class="material-symbols-outlined">
+                notifications
+            </span>
+
+            <!-- Conta -->
+            <div class="conta" data-conta>
+                <button type="button" class="conta__botao" data-conta-botao aria-haspopup="menu" aria-expanded="false">
+                    <span class="avatar" data-avatar></span>
+                    <span class="conta__nome" data-nome-usuario></span>
+                    <span class="material-symbols-outlined conta__seta">expand_more</span>
+                </button>
+
+                <div class="conta__menu" role="menu" data-conta-menu hidden>
+                    <div class="conta__perfil">
+                        <span class="avatar avatar--grande" data-avatar></span>
+                        <div>
+                            <strong data-nome-usuario></strong>
+                            <small data-email-usuario></small>
+                        </div>
+                    </div>
+                    <button type="button" role="menuitem" data-abrir="dialogo-senha">
+                        <span class="material-symbols-outlined">key</span> Editar senha
+                    </button>
+                    <button type="button" role="menuitem" data-abrir="dialogo-foto">
+                        <span class="material-symbols-outlined">photo_camera</span> Escolher foto
+                    </button>
+                    <button type="button" role="menuitem" data-abrir="dialogo-redefinir">
+                        <span class="material-symbols-outlined">lock_reset</span> Redefinir senha
+                    </button>
+                    <button type="button" role="menuitem" data-abrir="dialogo-config">
+                        <span class="material-symbols-outlined">settings</span> Configurações
+                    </button>
+                    <hr>
+                    <button type="button" role="menuitem" data-sair>
+                        <span class="material-symbols-outlined">logout</span> Sair
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section data-name="lancamentos" class="section">
+            <h2>Lançamentos no MitraSeeks</h2>
+            <div class="esteira"><ul class="esteira__trilho"></ul></div>
+        </section>
+
+        <section data-name="top5" class="section">
+            <h2>Títulos populares no MitraSeeks</h2>
+            <div class="esteira"><ul class="esteira__trilho"></ul></div>
+        </section>
+
+        <section data-name="series" class="section">
+            <h2>Séries no MitraSeeks</h2>
+            <div class="esteira"><ul class="esteira__trilho"></ul></div>
+        </section>
+
+        <section data-name="filmes" class="section">
+            <h2>Filmes no MitraSeeks</h2>
+            <div class="esteira"><ul class="esteira__trilho"></ul></div>
+        </section>
+
+        <!-- Resultado do filtro de categoria ou da busca -->
+        <section data-name="categoria" class="hidden pesquisa">
+            <h2 data-titulo-pesquisa>Títulos no MitraSeeks</h2>
+            <p class="pesquisa__vazio" data-pesquisa-vazio hidden>Nenhum título encontrado.</p>
+        </section>
+    </main>
+
+    <!-- Editar senha -->
+    <dialog class="dialogo" id="dialogo-senha">
+        <form class="dialogo__corpo" data-form-senha novalidate>
+            <h3>Editar senha</h3>
+            <label class="campo"><span>Senha atual</span>
+                <input name="senhaAtual" type="password" autocomplete="current-password" required></label>
+            <label class="campo"><span>Nova senha</span>
+                <input name="novaSenha" type="password" autocomplete="new-password" required>
+                <small>Mínimo de 8 caracteres, com letra e número</small></label>
+            <label class="campo"><span>Confirmar nova senha</span>
+                <input name="confirmacao" type="password" autocomplete="new-password" required></label>
+            <p class="aviso" data-aviso hidden></p>
+            <div class="dialogo__acoes">
+                <button type="button" class="botao botao--secundario" data-fechar>Cancelar</button>
+                <button type="submit" class="botao">Salvar senha</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Escolher foto -->
+    <dialog class="dialogo" id="dialogo-foto">
+        <form class="dialogo__corpo" data-form-foto novalidate>
+            <h3>Foto do perfil</h3>
+            <div class="foto">
+                <span class="avatar avatar--foto" data-foto-previa></span>
+                <label class="botao botao--secundario foto__escolher">
+                    <span class="material-symbols-outlined">upload</span> Escolher imagem
+                    <input type="file" accept="image/png,image/jpeg,image/webp" data-foto-arquivo hidden>
+                </label>
+                <button type="button" class="link" data-foto-remover>Remover foto</button>
+            </div>
+            <p class="aviso" data-aviso hidden></p>
+            <div class="dialogo__acoes">
+                <button type="button" class="botao botao--secundario" data-fechar>Cancelar</button>
+                <button type="submit" class="botao">Salvar foto</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Redefinir senha por código no email -->
+    <dialog class="dialogo" id="dialogo-redefinir">
+        <form class="dialogo__corpo" data-form-redefinir novalidate>
+            <h3>Redefinir senha</h3>
+            <div data-redefinir-passo="1">
+                <p class="dialogo__texto">Vamos mandar um código para <b data-email-usuario></b>. Com ele você cria uma
+                    senha nova sem precisar da atual. Por segurança, as outras sessões serão encerradas.</p>
+            </div>
+            <div data-redefinir-passo="2" hidden>
+                <label class="campo"><span>Código recebido</span>
+                    <input name="codigo" class="campo__codigo" inputmode="numeric" autocomplete="one-time-code"
+                        maxlength="6"></label>
+                <label class="campo"><span>Nova senha</span>
+                    <input name="novaSenha" type="password" autocomplete="new-password">
+                    <small>Mínimo de 8 caracteres, com letra e número</small></label>
+                <label class="campo"><span>Confirmar nova senha</span>
+                    <input name="confirmacao" type="password" autocomplete="new-password"></label>
+            </div>
+            <p class="aviso" data-aviso hidden></p>
+            <div class="dialogo__acoes">
+                <button type="button" class="botao botao--secundario" data-fechar>Cancelar</button>
+                <button type="submit" class="botao" data-redefinir-botao>Enviar código</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Configurações gerais -->
+    <dialog class="dialogo dialogo--largo" id="dialogo-config">
+        <div class="config">
+            <nav class="config__abas" role="tablist" aria-label="Configurações">
+                <h3>Configurações</h3>
+                <button type="button" role="tab" data-config-aba="conta" aria-selected="true">
+                    <span class="material-symbols-outlined">person</span> Conta</button>
+                <button type="button" role="tab" data-config-aba="exibicao" aria-selected="false">
+                    <span class="material-symbols-outlined">tune</span> Exibição</button>
+                <button type="button" role="tab" data-config-aba="notificacoes" aria-selected="false">
+                    <span class="material-symbols-outlined">notifications</span> Notificações</button>
+                <button type="button" role="tab" data-config-aba="seguranca" aria-selected="false">
+                    <span class="material-symbols-outlined">shield_person</span> Privacidade e segurança</button>
+            </nav>
+
+            <div class="config__conteudo">
+                <button type="button" class="icone-botao config__fechar" data-fechar aria-label="Fechar">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+
+                <section data-config-painel="conta">
+                    <h4>Conta</h4>
+                    <div class="conta__perfil conta__perfil--config">
+                        <span class="avatar avatar--grande" data-avatar></span>
+                        <div>
+                            <strong data-nome-usuario></strong>
+                            <small data-email-usuario></small>
+                            <small data-membro-desde></small>
+                        </div>
+                    </div>
+                    <div class="config__linha">
+                        <div><strong>Foto do perfil</strong><small>Aparece no menu da conta</small></div>
+                        <button type="button" class="botao botao--secundario" data-abrir="dialogo-foto">Trocar foto</button>
+                    </div>
+                    <div class="config__linha">
+                        <div><strong>Senha</strong><small>Troque a senha usando a senha atual</small></div>
+                        <button type="button" class="botao botao--secundario" data-abrir="dialogo-senha">Editar senha</button>
+                    </div>
+                </section>
+
+                <section data-config-painel="exibicao" hidden>
+                    <h4>Exibição</h4>
+                    <div class="config__linha">
+                        <div><strong>Velocidade das esteiras</strong><small>Rolagem dos títulos em cada seção</small></div>
+                        <select class="config__select" data-pref="velocidade">
+                            <option value="lenta">Lenta</option>
+                            <option value="media">Média</option>
+                            <option value="rapida">Rápida</option>
+                        </select>
+                    </div>
+                    <label class="config__linha">
+                        <div><strong>Pausar ao passar o mouse</strong><small>A esteira para enquanto você escolhe</small></div>
+                        <input type="checkbox" class="chave" data-pref="pausarNoHover">
+                    </label>
+                    <label class="config__linha">
+                        <div><strong>Mostrar nota nos cartazes</strong><small>Avaliação do IMDb no canto do pôster</small></div>
+                        <input type="checkbox" class="chave" data-pref="mostrarNota">
+                    </label>
+                    <label class="config__linha">
+                        <div><strong>Reduzir animações</strong><small>Esteiras paradas, com rolagem manual</small></div>
+                        <input type="checkbox" class="chave" data-pref="reduzirAnimacoes">
+                    </label>
+                </section>
+
+                <section data-config-painel="notificacoes" hidden>
+                    <h4>Notificações</h4>
+                    <label class="config__linha">
+                        <div><strong>Novidades e lançamentos</strong><small>Receber avisos de novos títulos por email</small></div>
+                        <input type="checkbox" class="chave" data-pref="notifNovidades">
+                    </label>
+                    <label class="config__linha">
+                        <div><strong>Novos episódios</strong><small>Quando séries que você vê ganharem episódios</small></div>
+                        <input type="checkbox" class="chave" data-pref="notifEpisodios">
+                    </label>
+                    <label class="config__linha">
+                        <div><strong>Recomendações semanais</strong><small>Sugestões com base no seu gosto</small></div>
+                        <input type="checkbox" class="chave" data-pref="notifRecomendacoes">
+                    </label>
+                </section>
+
+                <section data-config-painel="seguranca" hidden>
+                    <h4>Privacidade e segurança</h4>
+                    <div class="config__linha">
+                        <div><strong>Redefinir senha</strong><small>Receba um código no email para criar outra senha</small></div>
+                        <button type="button" class="botao botao--secundario" data-abrir="dialogo-redefinir">Redefinir</button>
+                    </div>
+                    <div class="config__linha">
+                        <div><strong>Sair de todos os dispositivos</strong><small>Encerra todas as sessões, inclusive esta</small></div>
+                        <button type="button" class="botao botao--perigo" data-sair-todos>Sair de todos</button>
+                    </div>
+                </section>
+
+                <p class="config__status" data-config-status aria-live="polite"></p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/conta.js" type="module"></script>
+</body>
+
+</html>

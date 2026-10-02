@@ -1,0 +1,30 @@
+# IDEs
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+
+# Java / Maven / IntelliJ build
+target/
+out/
+bin/
+build/
+*.class
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar
+
+# Node
+node_modules/
+
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+application-local.properties
+application-secret.properties
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,379 @@
+# Filmes importados pelo POST /catalogo/importar (um título por linha, como aparece no OMDb).
+# Linhas com # são ignoradas. Pode acrescentar mais títulos e rodar a importação de novo.
+The Shawshank Redemption
+The Godfather Part II
+12 Angry Men
+Schindler's List
+The Lord of the Rings: The Fellowship of the Ring
+The Lord of the Rings: The Two Towers
+The Lord of the Rings: The Return of the King
+The Good, the Bad and the Ugly
+Star Wars: Episode IV - A New Hope
+Star Wars: Episode V - The Empire Strikes Back
+Star Wars: Episode VI - Return of the Jedi
+Goodfellas
+Se7en
+The Silence of the Lambs
+City of God
+Saving Private Ryan
+The Green Mile
+Life Is Beautiful
+Terminator 2: Judgment Day
+The Terminator
+Back to the Future
+The Pianist
+Psycho
+The Departed
+The Prestige
+Whiplash
+The Usual Suspects
+Léon: The Professional
+Casablanca
+Alien
+Aliens
+Apocalypse Now
+Memento
+Raiders of the Lost Ark
+Indiana Jones and the Last Crusade
+Django Unchained
+The Shining
+Avengers: Infinity War
+Avengers: Endgame
+The Avengers
+Joker
+The Dark Knight Rises
+Batman Begins
+Braveheart
+American Beauty
+Inglourious Basterds
+Good Will Hunting
+Reservoir Dogs
+2001: A Space Odyssey
+Citizen Kane
+Vertigo
+North by Northwest
+Amélie
+A Clockwork Orange
+Full Metal Jacket
+Taxi Driver
+Scarface
+Heat
+The Sixth Sense
+Jurassic Park
+Jaws
+E.T. the Extra-Terrestrial
+Titanic
+Avatar
+Avatar: The Way of Water
+The Truman Show
+Pirates of the Caribbean: The Curse of the Black Pearl
+Harry Potter and the Sorcerer's Stone
+Harry Potter and the Chamber of Secrets
+Harry Potter and the Prisoner of Azkaban
+Harry Potter and the Goblet of Fire
+Harry Potter and the Deathly Hallows: Part 2
+Iron Man
+Guardians of the Galaxy
+Black Panther
+Spider-Man
+Spider-Man 2
+Spider-Man: No Way Home
+Spider-Man: Across the Spider-Verse
+Doctor Strange
+Thor: Ragnarok
+Captain America: Civil War
+Deadpool
+Logan
+Wonder Woman
+Mad Max: Fury Road
+Furiosa: A Mad Max Saga
+Blade Runner
+Blade Runner 2049
+The Matrix Reloaded
+Die Hard
+John Wick
+Top Gun: Maverick
+Mission: Impossible - Fallout
+Casino Royale
+Skyfall
+No Country for Old Men
+There Will Be Blood
+Fargo
+The Big Lebowski
+Kill Bill: Vol. 1
+Shutter Island
+The Wolf of Wall Street
+Catch Me If You Can
+The Revenant
+La La Land
+Everything Everywhere All at Once
+Get Out
+Knives Out
+The Grand Budapest Hotel
+Her
+Arrival
+Gravity
+The Martian
+Ex Machina
+Edge of Tomorrow
+Tenet
+Dunkirk
+1917
+The Social Network
+Gone Girl
+Prisoners
+Zodiac
+Drive
+Nightcrawler
+Black Swan
+The Hateful Eight
+Once Upon a Time in Hollywood
+Green Book
+Bohemian Rhapsody
+A Star Is Born
+Rocky
+Creed
+Million Dollar Baby
+Gran Torino
+The Intouchables
+Slumdog Millionaire
+The Pursuit of Happyness
+The Notebook
+Pride & Prejudice
+Groundhog Day
+Home Alone
+The Hangover
+Superbad
+Mean Girls
+Barbie
+Poor Things
+Past Lives
+Killers of the Flower Moon
+Dune: Part Two
+Oldboy
+Train to Busan
+Pan's Labyrinth
+Central Station
+Elite Squad
+Roma
+CODA
+Nomadland
+Moonlight
+Spotlight
+Birdman
+12 Years a Slave
+The King's Speech
+Argo
+The Shape of Water
+The Exorcist
+Halloween
+A Quiet Place
+Hereditary
+It
+The Conjuring
+Inside Out
+Inside Out 2
+Finding Nemo
+Monsters, Inc.
+Ratatouille
+The Incredibles
+Zootopia
+Frozen
+Moana
+Shrek
+Shrek 2
+How to Train Your Dragon
+Kung Fu Panda
+Despicable Me
+Soul
+Encanto
+Toy Story 2
+Toy Story 3
+WALL·E
+Your Name.
+Princess Mononoke
+My Neighbor Totoro
+Howl's Moving Castle
+Grave of the Fireflies
+The Boy and the Heron
+Akira
+The Iron Giant
+Aladdin
+Beauty and the Beast
+Mulan
+Tangled
+Big Hero 6
+Klaus
+Coraline
+
+# ===== Ampliação do catálogo (títulos do IMDb via OMDb) =====
+# --- Cinema brasileiro e latino-americano ---
+Elite Squad 2: The Enemy Within
+Carandiru
+The Second Mother
+Bacurau
+Aquarius
+I'm Still Here
+A Dog's Will
+Black Orpheus
+Amores Perros
+Y Tu Mamá También
+Wild Tales
+The Secret in Their Eyes
+# --- Ásia ---
+Seven Samurai
+Rashomon
+Ikiru
+Tokyo Story
+Memories of Murder
+The Handmaiden
+Burning
+Decision to Leave
+Crouching Tiger, Hidden Dragon
+In the Mood for Love
+Shoplifters
+Drive My Car
+Perfect Days
+3 Idiots
+Dangal
+RRR
+Perfect Blue
+Ghost in the Shell
+Nausicaä of the Valley of the Wind
+Kiki's Delivery Service
+Castle in the Sky
+Porco Rosso
+A Silent Voice
+Weathering with You
+Suzume
+# --- Europa ---
+The Lives of Others
+Cinema Paradiso
+Bicycle Thieves
+8½
+La Dolce Vita
+The Seventh Seal
+Downfall
+Das Boot
+Run Lola Run
+Anatomy of a Fall
+The Zone of Interest
+Portrait of a Lady on Fire
+Amour
+The Hunt
+Another Round
+Incendies
+A Separation
+Trainspotting
+Hot Fuzz
+Shaun of the Dead
+Paddington 2
+All Quiet on the Western Front
+Metropolis
+Stalker
+# --- Clássicos de Hollywood ---
+Singin' in the Rain
+Sunset Boulevard
+Some Like It Hot
+Rear Window
+The Apartment
+Lawrence of Arabia
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
+To Kill a Mockingbird
+It's a Wonderful Life
+The Sound of Music
+Gone with the Wind
+The Wizard of Oz
+Chinatown
+One Flew Over the Cuckoo's Nest
+The Deer Hunter
+Annie Hall
+Rain Man
+Dead Poets Society
+The Graduate
+Ben-Hur
+Modern Times
+City Lights
+The Great Dictator
+# --- Drama e suspense recentes ---
+The Holdovers
+Anora
+Conclave
+The Brutalist
+The Substance
+Sinners
+Challengers
+Aftersun
+Tár
+The Banshees of Inisherin
+The Fabelmans
+The Irishman
+Marriage Story
+Little Women
+Lady Bird
+Uncut Gems
+Jojo Rabbit
+Ford v Ferrari
+Hacksaw Ridge
+Sicario
+Mystic River
+Collateral
+# --- Ficção científica e ação ---
+Children of Men
+Minority Report
+The Fifth Element
+Gattaca
+District 9
+Looper
+Top Gun
+Speed
+Face/Off
+The Bourne Ultimatum
+The Raid
+Mission: Impossible - Dead Reckoning Part One
+John Wick: Chapter 4
+The Batman
+300
+Gladiator II
+Wicked
+# --- Comédia ---
+Monty Python and the Holy Grail
+Airplane!
+Ferris Bueller's Day Off
+Little Miss Sunshine
+Juno
+Crazy, Stupid, Love.
+Anchorman: The Legend of Ron Burgundy
+Bridesmaids
+21 Jump Street
+Game Night
+# --- Terror ---
+Rosemary's Baby
+The Thing
+Scream
+The Babadook
+The Witch
+Midsommar
+Us
+Nope
+Talk to Me
+The Others
+The Ring
+# --- Animação ---
+Fantastic Mr. Fox
+Isle of Dogs
+Persepolis
+The Wild Robot
+Flow
+Puss in Boots: The Last Wish
+Luca
+Turning Red
+Wolfwalkers
+The Lego Movie
+Lilo & Stitch
+The Little Mermaid
+Guillermo del Toro's Pinocchio
+Wallace & Gromit: The Curse of the Were-Rabbit
+# --- Documentário ---
+Free Solo
+My Octopus Teacher
